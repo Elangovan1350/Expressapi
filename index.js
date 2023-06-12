@@ -22,9 +22,11 @@ mongoose
 
 const productSchema = mongoose.Schema(
   {
-    name: String,
-    password: String,
-    email: String,
+    title:String,
+    price:Number,
+    image:String,
+    description:String,
+    category:String
   },
   {
     versionkey: false,
