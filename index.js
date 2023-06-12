@@ -33,7 +33,7 @@ const productSchema = mongoose.Schema(
   }
 );
 
-const products = new mongoose.model("popos", productSchema);
+const products = new mongoose.model("popo", productSchema);
 
 app.get("/", async (req, res) => {
   const getAll = await products.find();
