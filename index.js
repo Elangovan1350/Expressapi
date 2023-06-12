@@ -26,7 +26,11 @@ const productSchema = mongoose.Schema(
     price:Number,
     image:String,
     description:String,
-    category:String
+    category:String,
+    rating:{
+      rate:Number,
+      count:Number
+    }
   },
   {
     versionkey: false,
@@ -47,8 +51,8 @@ app.get("/:id",async(req,res)=>{
 })
 
 app.post("/", async (req, res) => {
-  const { title,price,description,image,category } = req.body;
-  const vandu = await new products({ title,price,description,image,category });
+  const { title,price,description,image,category ,rating  } = req.body;
+  const vandu = await new products({ title,price,description,image,category,rating });
   vandu.save().then((resq) => {
     if (resq) {
       console.log("data saved");
